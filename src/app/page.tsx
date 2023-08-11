@@ -1,7 +1,9 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>do</div>
-  )
+    <div>
+      <Image src="/assets/hero.png" alt="" width={500} height={500} />
+    </div>
+  );
 }
