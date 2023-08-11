@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.container {
+  @apply max-w-[1366px] min-h-[100vh] mx-0 my-auto px-16 flex flex-col justify-between;
+}
