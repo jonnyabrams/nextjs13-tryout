@@ -18,7 +18,7 @@ const About = () => {
       </div>
       <div className="flex gap-[100px]">
         <div className="flex-1 mt-[50px] flex flex-col gap-[30px]">
-          <h1 className="text-2xl font-semibold">Who is Jonny?</h1>
+          <h1>Who is Jonny?</h1>
           <p className="text-justify font-light">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, ex
             sint. Itaque id eos in fugiat eius, soluta vero pariatur ad alias,
@@ -33,7 +33,7 @@ const About = () => {
           </p>
         </div>
         <div className="flex-1 mt-[50px] flex flex-col gap-[30px]">
-          <h1 className="text-2xl font-semibold">Why is Jonny?</h1>
+          <h1>Why is Jonny?</h1>
           <p className="text-justify font-light">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, ex
             sint. Itaque id eos in fugiat eius, soluta vero pariatur ad alias,

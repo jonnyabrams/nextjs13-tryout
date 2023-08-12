@@ -26,6 +26,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+h1 {
+  @apply text-2xl font-semibold;
+}
+
+input,
+textarea {
+  @apply p-5 bg-transparent outline-none text-[#bbb] border-4 border-[#bbb] text-[20px];
+}
+
 .container {
   @apply max-w-[1366px] min-h-[100vh] mx-0 my-auto px-16 flex flex-col justify-between;
 }
