@@ -31,7 +31,7 @@ const Navbar = () => {
             </Link>
           );
         })}
-        <button className="p-1 border-none bg-[#53c28b] text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition">
+        <button className="p-1 border-none bg-main-green text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition">
           Logout
         </button>
       </div>
@@ -57,7 +57,7 @@ const Navbar = () => {
                   </Link>
                 );
               })}
-              <button className="p-1 border-none bg-[#53c28b] text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition">
+              <button className="p-1 border-none bg-main-green text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition">
                 Logout
               </button>
             </div>

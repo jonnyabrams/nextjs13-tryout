@@ -9,7 +9,7 @@ interface CategoryItemProps {
 const CategoryItem = ({ link, title, img }: CategoryItemProps) => (
   <Link
     href={`portfolio/${link}`}
-    className="border-[5px] border-[#bbb] rounded-sm w-[300px] h-[400px] relative hover:text-red-700"
+    className="border-[5px] border-[#bbb] rounded-sm w-[300px] h-[400px] relative hover:text-main-green"
     style={{ background: `url('/assets/${img}')`, backgroundSize: "cover" }}
   >
     <span className="absolute right-[10px] bottom-[10px] text-[40px] font-bold">

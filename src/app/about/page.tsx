@@ -11,7 +11,7 @@ const About = () => {
           fill={true}
           className="object-cover"
         />
-        <div className="absolute bottom-5 left-5 bg-[#53c28b] p-1.5 text-white rounded-sm">
+        <div className="absolute bottom-5 left-5 bg-main-green p-1.5 text-white rounded-sm">
           <h1 className="text-lg font-semibold">Jonny Abrams</h1>
           <h2 className="text-sm">World&apos;s 5th greatest Jonny</h2>
         </div>
