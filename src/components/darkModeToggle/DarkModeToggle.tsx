@@ -1,8 +1,17 @@
+"use client"
+
+import { useContext } from "react";
+
+import { ThemeContext } from "@/src/context/ThemeContext";
+
 const DarkModeToggle = () => {
-  const mode = "light";
+  const { toggle, mode } = useContext(ThemeContext);
 
   return (
-    <div className="relative flex justify-between items-center w-[42px] h-[24px] border-[1.5px] border-primary rounded-[30px] p-[2px] cursor-pointer">
+    <div
+      onClick={toggle}
+      className="relative flex justify-between items-center w-[42px] h-[24px] border-[1.5px] border-primary rounded-[30px] p-[2px] cursor-pointer"
+    >
       <div className="text-[12px]">🌙</div>
       <div className="text-[12px]">🌞</div>
       <div

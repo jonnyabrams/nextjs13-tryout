@@ -35,6 +35,16 @@ textarea {
   @apply p-5 bg-transparent outline-none text-[#bbb] border-4 border-[#bbb] text-[20px];
 }
 
+.light {
+  background-color: white;
+  color: #111;
+}
+
+.dark {
+  background-color: #111;
+  color: #bbb;
+}
+
 .container {
   @apply max-w-full min-h-[100vh] mx-0 my-auto px-10 flex flex-col justify-between;
 }
