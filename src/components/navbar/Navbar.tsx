@@ -41,7 +41,7 @@ const Navbar = () => {
       >
         <ImMenu3 style={{ color: "white", fontSize: "40" }} />
         {showDropdown && (
-          <div className="absolute right-3.5 top-9 min-w-[160px] min-h-[280px] py-3 rounded-sm bg-gray-800">
+          <div className="absolute right-3.5 top-9 min-w-[160px] py-3 rounded-sm bg-gray-800">
             <div className="flex flex-col items-center gap-2">
               {navLinks.map((link) => {
                 const isActive =
