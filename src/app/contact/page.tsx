@@ -5,7 +5,7 @@ import Button from "@/src/components/button/Button";
 const Contact = () => {
   return (
     <div>
-      <h1 className="mb-[100px] text-4xl text-center">Send Me a Message</h1>
+      <h1 className="mb-[40px] text-4xl text-center">Send Me a Message</h1>
       <div className="flex gap-[100px] items-center">
         <div className="flex-1 h-[500px] relative max-lg:hidden">
           <Image

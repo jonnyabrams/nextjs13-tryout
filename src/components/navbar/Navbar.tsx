@@ -9,11 +9,11 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="h-[100px] flex justify-between items-center">
+    <div className="h-[100px] flex justify-between items-center fixed top-0 w-full bg-black">
       <Link href="/" className="font-bold text-[22px]">
         Navbar
       </Link>
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-5 mr-20">
         {navLinks.map((link) => {
           const isActive =
             (link.url.length > 1 && pathname.includes(link.url)) ||
