@@ -6,6 +6,7 @@ import { ImMenu3 } from "react-icons/im";
 
 import { navLinks } from "@/src/constants";
 import { useState } from "react";
+import DarkModeToggle from "../darkModeToggle/DarkModeToggle";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -17,6 +18,7 @@ const Navbar = () => {
         Navbar
       </Link>
       <div className="flex items-center gap-5 max-md:hidden">
+        <DarkModeToggle />
         {navLinks.map((link) => {
           const isActive =
             (link.url.length > 1 && pathname.includes(link.url)) ||
