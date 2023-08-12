@@ -10,7 +10,7 @@ const Button = ({ text, url, isLong = false }: Props) => {
   return (
     <Link href={url}>
       <button
-        className="p-5 cursor-pointer bg-main-green border-none text-white rounded-md hover:scale-105 transition"
+        className="p-5 cursor-pointer bg-primary border-none text-white rounded-md hover:scale-105 transition"
         style={{ width: isLong ? "100%" : "max-content" }}
       >
         {text}

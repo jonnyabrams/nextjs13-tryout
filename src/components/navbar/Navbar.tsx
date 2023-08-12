@@ -31,7 +31,7 @@ const Navbar = () => {
             </Link>
           );
         })}
-        <button className="p-1 border-none bg-main-green text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition">
+        <button className="p-1 border-none bg-primary text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition">
           Logout
         </button>
       </div>
@@ -50,14 +50,16 @@ const Navbar = () => {
                 return (
                   <Link
                     href={link.url}
-                    className={`${isActive ? "font-semibold" : "font-light"} w-full text-white text-center hover:bg-gray-400 transition`}
+                    className={`${
+                      isActive ? "font-semibold" : "font-light"
+                    } w-full text-white text-center hover:bg-gray-400 transition`}
                     key={link.id}
                   >
                     {link.title}
                   </Link>
                 );
               })}
-              <button className="p-1 mt-5 border-none bg-main-green text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition">
+              <button className="p-1 mt-5 border-none bg-primary text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition">
                 Logout
               </button>
             </div>
