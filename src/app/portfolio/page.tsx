@@ -12,7 +12,7 @@ const CategoryItem = ({ link, title, img }: CategoryItemProps) => (
     className="border-[5px] border-[#bbb] rounded-sm w-[300px] h-[400px] relative hover:text-primary"
     style={{ background: `url('/assets/${img}')`, backgroundSize: "cover" }}
   >
-    <span className="absolute right-[10px] bottom-[10px] text-[40px] font-bold">
+    <span className="absolute right-[10px] bottom-[10px] text-[40px] max-sm:text-[30px] font-bold">
       {title}
     </span>
   </Link>
@@ -20,9 +20,9 @@ const CategoryItem = ({ link, title, img }: CategoryItemProps) => (
 
 const Portfolio = () => {
   return (
-    <div className="">
+    <div className="max-sm:px-20">
       <h1 className="my-12">Choose a gallery</h1>
-      <div className="flex gap-12">
+      <div className="flex flex-wrap gap-12">
         <CategoryItem
           link="illustrations"
           title="Illustrations"
