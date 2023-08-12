@@ -35,6 +35,10 @@ textarea {
   @apply p-5 bg-transparent outline-none text-[#bbb] border-4 border-[#bbb] text-[20px];
 }
 
+.theme {
+  transition: 1s all ease;
+}
+
 .light {
   background-color: white;
   color: #111;
