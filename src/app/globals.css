@@ -36,5 +36,5 @@ textarea {
 }
 
 .container {
-  @apply max-w-[1366px] min-h-[100vh] mx-0 my-auto px-10 flex flex-col justify-between;
+  @apply max-w-full min-h-[100vh] mx-0 my-auto px-10 flex flex-col justify-between;
 }
