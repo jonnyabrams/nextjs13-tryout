@@ -20,7 +20,7 @@ const Blog = async () => {
         <Link
           key={item._id}
           className="flex items-center gap-[50px] mb-[50px]"
-          href={item._id}
+          href={`blog/${item._id}`}
         >
           <div>
             <Image
