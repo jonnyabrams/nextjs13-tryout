@@ -12,7 +12,7 @@ const Dashboard = () => {
   }
 
   if (session.status === "unauthenticated") {
-    router?.push("dashboard/login")
+    router?.push("/dashboard/login")
   }
 
   if (session.status === "authenticated") {
