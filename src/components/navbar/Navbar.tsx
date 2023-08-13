@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ImMenu3 } from "react-icons/im";
+import { ImMenu3, ImMenu4 } from "react-icons/im";
 import { signOut, useSession } from "next-auth/react";
 import { useState } from "react";
 
@@ -53,7 +53,11 @@ const Navbar = () => {
         onClick={() => setShowDropdown(!showDropdown)}
         className="md:hidden relative"
       >
-        <ImMenu3 style={{ color: "white", fontSize: "40" }} />
+        {showDropdown ? (
+          <ImMenu4 style={{ color: "white", fontSize: "40" }} />
+        ) : (
+          <ImMenu3 style={{ color: "white", fontSize: "40" }} />
+        )}
         {showDropdown && (
           <div className="absolute right-3.5 top-9 min-w-[160px] py-3 rounded-sm bg-black border-2 border-white">
             <div className="flex flex-col items-center gap-2">
