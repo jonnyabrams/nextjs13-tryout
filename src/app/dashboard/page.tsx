@@ -2,6 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import useSWR from "swr";
 
 const Dashboard = () => {
@@ -22,14 +23,16 @@ const Dashboard = () => {
     fetcher
   );
 
-  console.log(data)
+  console.log(data);
+
+  useEffect(() => {
+    if (session.status === "unauthenticated") {
+      router?.push("/dashboard/login");
+    }
+  }, [session.status, router]);
 
   if (session.status === "loading") {
     return <p>Loading...</p>;
-  }
-
-  if (session.status === "unauthenticated") {
-    router?.push("/dashboard/login");
   }
 
   if (session.status === "authenticated") {
