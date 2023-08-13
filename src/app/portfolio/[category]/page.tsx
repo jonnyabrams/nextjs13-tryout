@@ -27,8 +27,13 @@ const Category = ({ params: { category } }: CategoryProps) => {
     <div className="mt-20">
       <h1 className="text-primary">{category}</h1>
 
-      {data.map((item: CategoryItemType) => (
-        <div key={item.id} className="flex gap-[50px] mt-[50px] mb-[100px]">
+      {data.map((item: CategoryItemType, index: number) => (
+        <div
+          key={item.id}
+          className={`flex gap-[50px] mt-[50px] mb-[100px] ${
+            index % 2 === 0 && "flex-row-reverse"
+          }`}
+        >
           <div className="flex-1 flex flex-col gap-[20px] justify-center">
             <h1 className="text-[50px]">{item.title}</h1>
             <p className="text-[20px] font-light">{item.desc}</p>
