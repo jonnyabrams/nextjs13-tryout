@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ImMenu3 } from "react-icons/im";
+import { signOut } from "next-auth/react";
 
 import { navLinks } from "@/src/constants";
 import { useState } from "react";
@@ -61,7 +62,13 @@ const Navbar = () => {
                   </Link>
                 );
               })}
-              <button className="p-1 mt-5 border-none bg-primary text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition">
+              <button
+                onClick={(event) => {
+                  event.preventDefault(); // Prevent default button behavior
+                  signOut(); // Call the signOut function
+                }}
+                className="p-1 mt-5 border-none bg-primary text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition"
+              >
                 Logout
               </button>
             </div>
