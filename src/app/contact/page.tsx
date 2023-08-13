@@ -1,6 +1,12 @@
 import Image from "next/image";
+import { Metadata } from "next";
 
 import Button from "@/src/components/button/Button";
+
+export const metadata: Metadata = {
+  title: "Contact Jonny",
+  description: "Contact Jonny, why not?",
+};
 
 const Contact = () => {
   return (

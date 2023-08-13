@@ -13,6 +13,14 @@ async function getData(id: string) {
   return res.json();
 }
 
+export async function generateMetadata({ params: { id } }: Props) {
+  const post = await getData(id);
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+}
+
 interface Props {
   params: {
     id: string;
