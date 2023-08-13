@@ -29,7 +29,7 @@ const Portfolio = () => {
           img="illustration.png"
         />
         <CategoryItem link="websites" title="Websites" img="websites.jpg" />
-        <CategoryItem link="application" title="Application" img="apps.jpg" />
+        <CategoryItem link="applications" title="Applications" img="apps.jpg" />
       </div>
     </div>
   );

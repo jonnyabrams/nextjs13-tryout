@@ -1,7 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Blog = () => {
+async function getData() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+const Blog = async () => {
+  const data = await getData();
+  
   return (
     <Link className="flex items-center gap-[50px] mb-[50px]" href="blog/testId">
       <div>
