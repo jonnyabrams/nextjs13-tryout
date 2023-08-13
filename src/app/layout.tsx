@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import { ThemeProvider } from "../context/ThemeContext";
+import AuthProvider from "../components/authProvider/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,13 +20,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider>
-          <div className="container">
-            <Navbar />
-            <div className="mt-[100px] mb-[50px]">
-              {children}
-              <Footer />
+          <AuthProvider>
+            <div className="container">
+              <Navbar />
+              <div className="mt-[100px] mb-[50px]">
+                {children}
+                <Footer />
+              </div>
             </div>
-          </div>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
