@@ -1,14 +1,23 @@
-"use client"
+"use client";
 
-import { useSession } from "next-auth/react"
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
-  const session = useSession()
-  
-  console.log(session)
-  return (
-    <div>Dashboard</div>
-  )
-}
+  const session = useSession();
+  const router = useRouter();
 
-export default Dashboard
+  if (session.status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (session.status === "unauthenticated") {
+    router?.push("dashboard/login")
+  }
+
+  if (session.status === "authenticated") {
+    return <div>Dashboard</div>;
+  }
+};
+
+export default Dashboard;
