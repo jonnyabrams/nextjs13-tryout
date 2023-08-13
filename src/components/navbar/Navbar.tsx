@@ -3,15 +3,21 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ImMenu3 } from "react-icons/im";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
+import { useState } from "react";
 
 import { navLinks } from "@/src/constants";
-import { useState } from "react";
 import DarkModeToggle from "../darkModeToggle/DarkModeToggle";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const pathname = usePathname();
+  const session = useSession();
+
+  const handleLogout = (event: any) => {
+    event.preventDefault();
+    signOut();
+  };
 
   return (
     <div className="h-[100px] flex justify-between items-center fixed top-0 right-0 left-0 px-10 w-full bg-black z-30">
@@ -34,9 +40,14 @@ const Navbar = () => {
             </Link>
           );
         })}
-        <button className="p-1 border-none bg-primary text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition">
-          Logout
-        </button>
+        {session.status === "authenticated" && (
+          <button
+            onClick={handleLogout}
+            className="p-1 border-none bg-primary text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition"
+          >
+            Logout
+          </button>
+        )}
       </div>
       <div
         onClick={() => setShowDropdown(!showDropdown)}
@@ -62,15 +73,14 @@ const Navbar = () => {
                   </Link>
                 );
               })}
-              <button
-                onClick={(event) => {
-                  event.preventDefault(); // Prevent default button behavior
-                  signOut(); // Call the signOut function
-                }}
-                className="p-1 mt-5 border-none bg-primary text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition"
-              >
-                Logout
-              </button>
+              {session.status === "authenticated" && (
+                <button
+                  onClick={handleLogout}
+                  className="p-1 mt-5 border-none bg-primary text-white text-sm cursor-pointer rounded-sm hover:scale-110 transition"
+                >
+                  Logout
+                </button>
+              )}
             </div>
           </div>
         )}
