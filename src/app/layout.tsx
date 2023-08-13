@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <AuthProvider>
             <div className="container">
               <Navbar />
-              <div className="mt-[100px] mb-[50px]">
+              <div className="mt-[110px] mb-[50px]">
                 {children}
                 <Footer />
               </div>
