@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch("http://localhost:3000/api/posts");
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -13,23 +13,31 @@ async function getData() {
 
 const Blog = async () => {
   const data = await getData();
-  
+
   return (
-    <Link className="flex items-center gap-[50px] mb-[50px]" href="blog/testId">
-      <div>
-        <Image
-          src="data:image/jpeg;base64,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"
-          alt=""
-          width={400}
-          height={250}
-          className="object-cover"
-        />
-      </div>
-      <div>
-        <h1 className="mb-2.5">Test</h1>
-        <p className="text-[18px] font-light">test test test</p>
-      </div>
-    </Link>
+    <>
+      {data.map((item: PostType) => (
+        <Link
+          key={item._id}
+          className="flex items-center gap-[50px] mb-[50px]"
+          href="blog/testId"
+        >
+          <div>
+            <Image
+              src={item.img}
+              alt=""
+              width={400}
+              height={250}
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <h1 className="mb-2.5">{item.title}</h1>
+            <p className="text-[18px] font-light">{item.desc}</p>
+          </div>
+        </Link>
+      ))}
+    </>
   );
 };
 
