@@ -55,21 +55,27 @@ const Dashboard = () => {
 
   if (session.status === "authenticated") {
     return (
-      <div className="">
-        <div className="">
+      <div className="flex gap-[100px]">
+        <div className="flex-1">
           {isLoading
             ? "Loading..."
             : data?.map((post: PostType) => (
-                <div key={post._id}>
-                  <div className="">
+                <div
+                  className="flex items-center justify-between my-[50px]"
+                  key={post._id}
+                >
+                  <div className="relative">
                     <Image src={post.img} alt="" width={200} height={100} />
                   </div>
                   <h2 className="">{post.title}</h2>
-                  <span className="">X</span>
+                  <span className="cursor-pointer text-red-700">X</span>
                 </div>
               ))}
         </div>
-        <form onSubmit={handleSubmit} className="">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-1 flex-col gap-[20px]"
+        >
           <h1>Add New Post</h1>
           <input placeholder="Title" />
           <input placeholder="Description" />
