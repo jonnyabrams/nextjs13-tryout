@@ -49,6 +49,7 @@ const Dashboard = () => {
         body: JSON.stringify({ title, desc, img, content, username }),
       });
       mutate();
+      e.target.reset();
     } catch (error) {
       console.log(error);
     }
