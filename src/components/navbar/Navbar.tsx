@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <div className="h-[100px] flex justify-between items-center fixed top-0 right-0 left-0 px-10 w-full bg-black z-30">
       <Link href="/" className="font-bold text-[22px]">
-        Navbar
+        Jonny
       </Link>
       <div className="flex items-center gap-5 max-md:hidden">
         <DarkModeToggle />
