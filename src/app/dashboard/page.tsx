@@ -19,12 +19,10 @@ const Dashboard = () => {
     return data;
   };
 
-  const { data, error, isLoading } = useSWR(
+  const { data, error, mutate, isLoading } = useSWR(
     `/api/posts?username=${session?.data?.user?.name}`,
     fetcher
   );
-
-  console.log(data);
 
   useEffect(() => {
     if (session.status === "unauthenticated") {
@@ -37,6 +35,8 @@ const Dashboard = () => {
   }
 
   const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
     const title = e.target[0].value;
     const desc = e.target[1].value;
     const img = e.target[2].value;
@@ -48,9 +48,19 @@ const Dashboard = () => {
         method: "POST",
         body: JSON.stringify({ title, desc, img, content, username }),
       });
+      mutate();
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleDelete = async (id: string) => {
+    try {
+      await fetch(`/api/posts/${id}`, {
+        method: "DELETE",
+      });
+      mutate();
+    } catch (error) {}
   };
 
   if (session.status === "authenticated") {
@@ -68,7 +78,12 @@ const Dashboard = () => {
                     <Image src={post.img} alt="" width={200} height={100} />
                   </div>
                   <h2 className="">{post.title}</h2>
-                  <span className="cursor-pointer text-red-700">X</span>
+                  <span
+                    onClick={() => handleDelete(post._id)}
+                    className="cursor-pointer text-red-700"
+                  >
+                    X
+                  </span>
                 </div>
               ))}
         </div>
