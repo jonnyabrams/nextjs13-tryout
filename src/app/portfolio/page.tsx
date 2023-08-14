@@ -20,7 +20,7 @@ const CategoryItem = ({ link, title, img }: CategoryItemProps) => (
 
 const Portfolio = () => {
   return (
-    <div className="max-sm:px-20">
+    <div className="max-sm:px-20" data-testid="portfolio">
       <h1 className="my-12">Choose a gallery</h1>
       <div className="flex flex-wrap gap-12">
         <CategoryItem
