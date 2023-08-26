@@ -66,7 +66,7 @@ const Dashboard = () => {
 
   if (session.status === "authenticated") {
     return (
-      <div className="flex gap-[100px]">
+      <div data-testid="dashboard" className="flex gap-[100px]">
         <div className="flex-1">
           {isLoading
             ? "Loading..."

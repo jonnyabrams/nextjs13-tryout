@@ -32,7 +32,10 @@ const Login = () => {
     });
   };
   return (
-    <div className="flex flex-col items-center justify-center gap-5">
+    <div
+      className="flex flex-col items-center justify-center gap-5"
+      data-testid="login"
+    >
       <form onSubmit={handleSubmit} className="w-[300px] flex flex-col gap-5">
         <input placeholder="email" type="email" required />
         <input placeholder="password" type="password" required />

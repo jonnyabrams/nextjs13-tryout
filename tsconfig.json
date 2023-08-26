@@ -24,6 +24,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "__tests__/index.test.tsx", "jest.config.ts", "jest.setup.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "__tests__/index.test.tsx", "jest.config.ts", "jest.setup.ts", "__tests__/Dashboard.test.tsx"],
   "exclude": ["node_modules"]
 }
